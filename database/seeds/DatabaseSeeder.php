@@ -12,5 +12,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        DB::table('todos')->insert([
+          'description' => Str::random(10),
+          'created_at' => date("Y-m-d H:i:s")
+        ]);
+        DB::table('todos')->insert([
+          'description' => Str::random(10),
+          'created_at' => date("Y-m-d H:i:s")
+        ]);
+        DB::table('todos')->insert([
+          'description' => Str::random(10),
+          'created_at' => date("Y-m-d H:i:s")
+        ]);
     }
 }
