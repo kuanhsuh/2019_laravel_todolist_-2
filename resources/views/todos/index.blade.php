@@ -25,18 +25,12 @@
             <br><br>
             <h2 class="title is-2">Todos</h2>
             <ul class="is-size-4">
+                @foreach($todos as $todo)
                 <li><label class="checkbox">
                         <input type="checkbox">
-                        Remember me
+                        {{$todo->description}}
                     </label><a class="button is-light">Edit</a> <a class="button is-dark">Delete</a></li>
-                <li><label class="checkbox">
-                        <input type="checkbox">
-                        Remember me
-                    </label></li>
-                <li><label class="checkbox">
-                        <input type="checkbox">
-                        Remember me
-                    </label></li>
+                @endforeach
             </ul>
         </div>
     </div>
