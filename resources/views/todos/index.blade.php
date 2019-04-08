@@ -7,16 +7,21 @@
             <h1 class="title">
                 Laravel Todolist with Bulma
             </h1>
+            @include('layouts.flash-msg')
+            @include('layouts.error')
+            <form method="POST" action="{{ route('todo.store')}}" >
             <div class="field is-grouped">
-                <p class="control is-expanded">
-                    <input class="input" type="text" placeholder="Find a repository">
-                </p>
-                <p class="control">
-                    <a class="button is-info">
-                        Add New
-                    </a>
-                </p>
-            </div>
+                    @csrf
+                    <p class="control is-expanded">
+                        <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description" type="text" placeholder="Add Todo" value="{{ old('description') }}">
+                    </p>
+                    <p class="control">
+                        <button type="submit" class="button is-info">
+                            Add New
+                        </button>
+                    </p>
+                </div>
+            </form>
             <br><br>
             <h2 class="title is-2">Tags</h2>
             <div>
