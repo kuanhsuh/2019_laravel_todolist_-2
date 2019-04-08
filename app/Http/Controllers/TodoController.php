@@ -11,14 +11,11 @@ class TodoController extends Controller
         return view('todos.index', compact('todos'));
     }
 
-    public function store() {
-        // dd('we are here');
-        request()->validate([
+    public function store(Todo $todo) {
+        $attributes = request()->validate([
             'description' => 'required|min:5|max:255'
         ]);
-        $todo = Todo::create([
-            'description' => request('description')
-        ]);
+        $todo->addTodo($attributes);
         session()->flash('success', 'Todo Has Been Created!');
         return back();
     }
