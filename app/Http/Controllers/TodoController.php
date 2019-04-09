@@ -19,4 +19,11 @@ class TodoController extends Controller
         session()->flash('success', 'Todo Has Been Created!');
         return back();
     }
+
+    public function destroy() {
+        // dd("testing");
+        $todo = Todo::find(request('todoId'));
+        $todo->delete();
+        return response()->json(['new_body' => 'testing' ],200);
+    }
 }

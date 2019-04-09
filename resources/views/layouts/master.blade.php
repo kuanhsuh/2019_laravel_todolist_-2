@@ -26,6 +26,23 @@
             return false;
         });
 
+        $(".todoDelete").click(function (e) {
+            e.preventDefault();
+            console.log('testing', e)
+            var todoItem = e.target.dataset['item']
+            $.ajax({
+                type: "POST",
+                url: urlDelete,
+                data: {
+                    todoId: todoItem,
+                    _token: token
+                }
+            }).done(function (msg) {
+                console.log('success')
+                location.reload();
+            })
+        })
+
     </script>
 </body>
 

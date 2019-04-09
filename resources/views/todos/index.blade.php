@@ -9,11 +9,12 @@
             </h1>
             @include('layouts.flash-msg')
             @include('layouts.error')
-            <form method="POST" action="{{ route('todo.store')}}" >
-            <div class="field is-grouped">
+            <form method="POST" action="{{ route('todo.store')}}">
+                <div class="field is-grouped">
                     @csrf
                     <p class="control is-expanded">
-                        <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description" type="text" placeholder="Add Todo" value="{{ old('description') }}">
+                        <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description"
+                            type="text" placeholder="Add Todo" value="{{ old('description') }}">
                     </p>
                     <p class="control">
                         <button type="submit" class="button is-info">
@@ -31,13 +32,15 @@
             <h2 class="title is-2">Todos</h2>
             <ul class="is-size-4">
                 @foreach($todos as $todo)
-                <li><label class="checkbox">
-                        <input type="checkbox">
-                        {{$todo->description}}
-                    </label><a class="button is-light">Edit</a> <a class="button is-dark">Delete</a></li>
+                @include('todos.todo')
                 @endforeach
             </ul>
         </div>
     </div>
 </div>
+<script>
+    var token = '{{Session::token() }}'
+    var urlDelete = '{{ route('todo.delete')}}'
+
+</script>
 @endsection
