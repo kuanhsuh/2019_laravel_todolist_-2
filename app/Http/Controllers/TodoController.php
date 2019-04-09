@@ -20,8 +20,19 @@ class TodoController extends Controller
         return back();
     }
 
+    public function edit(Todo $todo) {
+        return view('todos.edit', compact('todo'));
+    }
+
+    public function update(Todo $todo) {
+        $todo->update([
+            'description' => request('description')
+        ]);
+        session()->flash('success', 'Todo Has Been updated!');
+        return redirect()->view('todos.index');
+    }
+
     public function destroy() {
-        // dd("testing");
         $todo = Todo::find(request('todoId'));
         $todo->delete();
         return response()->json(['new_body' => 'testing' ],200);
