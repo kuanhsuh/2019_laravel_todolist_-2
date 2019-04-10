@@ -23,3 +23,5 @@ Filter with Tags
 seeding
 
 Next Work on Edit
+
+https://sebastiandedeyne.com/non-breaking-seo-friendly-urls-in-laravel

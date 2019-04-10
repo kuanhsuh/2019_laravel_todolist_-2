@@ -20,6 +20,10 @@ class TodoController extends Controller
         return back();
     }
 
+    public function show(Todo $todo, $slug=null) {
+        return view('todos.show', compact('todo'));
+    }
+
     public function edit(Todo $todo) {
         return view('todos.edit', compact('todo'));
     }
