@@ -1,7 +1,7 @@
 <?php
-if (! function_exists('say_hi')) {
-    function say_hi()
+if (! function_exists('gen_url')) {
+    function gen_url($str)
     {
-        return "say hi testing 123";
+        return  implode("-", explode(" ", strtolower($str)));
     }
 }

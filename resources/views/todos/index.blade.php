@@ -5,7 +5,7 @@
     <div class="columns is-mobile">
         <div class="column is-10 is-offset-1">
             <h1 class="title">
-                Laravel Todolist with Bulma {{ say_hi() }}
+                Laravel Todolist with Bulma
             </h1>
             @include('layouts.flash-msg')
             @include('layouts.error')
