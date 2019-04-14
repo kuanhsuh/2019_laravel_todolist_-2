@@ -25,6 +25,20 @@
             </form>
             <br><br>
             <h2 class="title is-2">Tags</h2>
+            <form method="POST" action="{{ route('tag.store')}}">
+                <div class="field is-grouped">
+                    @csrf
+                    <p class="control is-expanded">
+                        <input class="input {{ $errors->has('tag') ? 'is-danger' :'' }}" name="tag"
+                            type="text" placeholder="Add Tag" value="{{ old('tag') }}">
+                    </p>
+                    <p class="control">
+                        <button type="submit" class="button is-info">
+                            Add Tag
+                        </button>
+                    </p>
+                </div>
+            </form>
             <div>
                 <span class="tag is-info">Info</span>
             </div>

@@ -21,3 +21,6 @@ Route::get('/todos/{todo}/{slug}', 'TodoController@show')->name('todo.show');
 Route::get('/todos/{todo}/', 'TodoController@show')->name('todo.show');
 Route::post('/todos', 'TodoController@store')->name('todo.store');
 Route::put('/todos/{todo}', 'TodoController@update')->name('todo.update');
+
+
+Route::post('/tags', 'TagController@store')->name('tag.store');
