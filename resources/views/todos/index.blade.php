@@ -16,6 +16,13 @@
                         <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description"
                             type="text" placeholder="Add Todo" value="{{ old('description') }}">
                     </p>
+                    <div class="select is-multiple" >
+                        <select multiple size="{{$tags->count()}}" name="tags[]">
+                            @foreach ($tags as $tag)
+                            <option value="{{$tag->id}}">{{$tag->tag}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <p class="control">
                         <button type="submit" class="button is-info">
                             Add New
@@ -29,8 +36,8 @@
                 <div class="field is-grouped">
                     @csrf
                     <p class="control is-expanded">
-                        <input class="input {{ $errors->has('tag') ? 'is-danger' :'' }}" name="tag"
-                            type="text" placeholder="Add Tag" value="{{ old('tag') }}">
+                        <input class="input {{ $errors->has('tag') ? 'is-danger' :'' }}" name="tag" type="text"
+                            placeholder="Add Tag" value="{{ old('tag') }}">
                     </p>
                     <p class="control">
                         <button type="submit" class="button is-info">
