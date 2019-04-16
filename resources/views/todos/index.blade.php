@@ -46,8 +46,11 @@
                     </p>
                 </div>
             </form>
+            <br>
             <div>
-                <span class="tag is-info">Info</span>
+                @foreach ($tags as $tag)
+                    <span class="tag is-info">{{$tag->tag}}</span>
+                @endforeach
             </div>
             <br><br>
             <h2 class="title is-2">Todos</h2>
