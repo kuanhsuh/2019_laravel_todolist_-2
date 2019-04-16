@@ -42,6 +42,7 @@ class TodoController extends Controller
 
     public function destroy() {
         $todo = Todo::find(request('todoId'));
+        $todo->tags()->detach();
         $todo->delete();
         return response()->json(['new_body' => 'testing' ],200);
     }
