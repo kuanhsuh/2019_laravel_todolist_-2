@@ -22,6 +22,7 @@ Use AppserviceContainer to eject global variable
 Filter with Tags
 seeding
 
-Next Work on Edit
-
 https://sebastiandedeyne.com/non-breaking-seo-friendly-urls-in-laravel
+
+Next Work on Edit
+Make \$tags global variable just for fun

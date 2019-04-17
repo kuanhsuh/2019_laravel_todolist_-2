@@ -10,8 +10,9 @@ class TodoController extends Controller
 {
     public function index() {
         $todos = Todo::all();
-        $tags = Tag::all();
-        return view('todos.index', compact(['todos', 'tags']));
+        // $tags = Tag::all();
+        // return view('todos.index', compact(['todos', 'tags']));
+        return view('todos.index', compact(['todos']));
     }
 
     public function store(Todo $todo) {
