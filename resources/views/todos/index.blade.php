@@ -61,8 +61,8 @@
             </ul>
         </div>
     </div>
+    {{ $todos->links() }}
 </div>
-{{ $todos->links() }}
 <script>
     var token = '{{Session::token() }}'
     var urlDelete = '{{ route('todo.delete')}}'
