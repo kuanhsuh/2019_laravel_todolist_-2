@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Pagination\Paginator;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -30,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             $view->with('tags', \App\Tag::all());
         });
+        // Paginator::defaultView('default');
+        Paginator::defaultView('pagination::default');
         // $data = \App\Tag::all();
         // View::share('tags', $data);
 

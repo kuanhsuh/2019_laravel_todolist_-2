@@ -16,7 +16,7 @@
                         <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description"
                             type="text" placeholder="Add Todo" value="{{ old('description') }}">
                     </p>
-                    <div class="select is-multiple" >
+                    <div class="select is-multiple">
                         <select multiple size="{{$tags->count()}}" name="tags[]">
                             @foreach ($tags as $tag)
                             <option value="{{$tag->id}}">{{$tag->tag}}</option>
@@ -49,7 +49,7 @@
             <br>
             <div>
                 @foreach ($tags as $tag)
-                    <span class="tag is-info">{{$tag->tag}}</span>
+                <span class="tag is-info">{{$tag->tag}}</span>
                 @endforeach
             </div>
             <br><br>
@@ -62,6 +62,7 @@
         </div>
     </div>
 </div>
+{{ $todos->links() }}
 <script>
     var token = '{{Session::token() }}'
     var urlDelete = '{{ route('todo.delete')}}'

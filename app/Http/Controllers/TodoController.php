@@ -9,9 +9,7 @@ use App\Tag;
 class TodoController extends Controller
 {
     public function index() {
-        $todos = Todo::all();
-        // $tags = Tag::all();
-        // return view('todos.index', compact(['todos', 'tags']));
+        $todos = Todo::paginate(3);
         return view('todos.index', compact(['todos']));
     }
 
