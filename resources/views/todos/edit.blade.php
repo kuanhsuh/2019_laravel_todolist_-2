@@ -17,6 +17,13 @@
                         <input class="input {{ $errors->has('description') ? 'is-danger' :'' }}" name="description"
                             type="text" value="{{ $todo->description }}">
                     </p>
+                    <div class="select is-multiple">
+                        <select multiple size="{{$tags->count()}}" name="tags[]">
+                            @foreach ($tags as $tag)
+                            <option value="{{$tag->id}}">{{$tag->tag}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <p class="control">
                         <button type="submit" class="button is-info">
                             Edit Todo
@@ -24,11 +31,6 @@
                     </p>
                 </div>
             </form>
-            <br><br>
-            <h2 class="title is-2">Tags</h2>
-            <div>
-                <span class="tag is-info">Info</span>
-            </div>
             <br><br>
         </div>
     </div>

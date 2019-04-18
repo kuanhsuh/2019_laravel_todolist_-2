@@ -34,11 +34,21 @@ class TodoController extends Controller
     }
 
     public function update(Todo $todo) {
-        $todo->update([
-            'description' => request('description')
+
+        // dd(request());
+        request()->validate([
+            'description' => 'required|min:5|max:255',
+            'tags' => 'required'
         ]);
+        $todo->update([
+            'description' => request('description'),
+        ]);
+        // foreach(request['tags'] as $tag) {
+        //     $todo->tags()->sync(request('tags'), false);
+        // }
+        $todo->tags()->sync(request('tags'), false);
         session()->flash('success', 'Todo Has Been updated!');
-        return redirect()->view('todos.index');
+        return redirect('/');
     }
 
     public function destroy() {
