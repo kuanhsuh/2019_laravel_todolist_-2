@@ -12,7 +12,7 @@ TodosID
 
 ## Tags
 
-Tags
+Tags | string
 
 ## Projects
 

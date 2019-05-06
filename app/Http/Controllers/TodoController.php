@@ -44,6 +44,7 @@ class TodoController extends Controller
         // foreach(request['tags'] as $tag) {
         //     $todo->tags()->sync(request('tags'), false);
         // }
+        //https://laracasts.com/discuss/channels/laravel/change-default-pagination-view-to-defaultbladephp
         $todo->tags()->sync(request('tags'), false);
         session()->flash('success', 'Todo Has Been updated!');
         return redirect('/');
